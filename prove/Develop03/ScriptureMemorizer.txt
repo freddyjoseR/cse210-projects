@@ -1,0 +1,35 @@
+Scripture Memorizer Program
+
+1. Program
+    This will be the main Program. It includes:
+        - Use a while loop to use the program until the user type "quit" or all words 
+        from the scripture are hidden.
+        - References from the classes to perform the tasks needed just as mention below.
+        - Add conditionals and all the program process to give the user the option to add
+        their own scriptures to memorize
+
+
+2. Scripture
+
+    - Text of the Scripture:
+        Make a variable member to list each word of the scripture text.
+        Use two instances to use the default scripture and the one inserted by the user.
+    - Create a method to display the text on the screen.
+
+3. Memorizer
+
+    - Create a variable member to add the list of the words that are being replaced in the 
+    program to check later when all words are already hidden. 
+
+    - Create a method to replaced the words with underscores randomly. 
+    
+    - Create a method to verify that all the words from the scripture have been hidden 
+    and send each to a new list to verify in the Program Class when the program should
+    end.
+    
+
+4. Reference
+
+    - Create a variable member to take the references both by default and from the user
+
+    - Create a method to display de reference on the screen

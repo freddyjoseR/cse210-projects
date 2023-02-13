@@ -9,8 +9,6 @@ El programa va a funcionar como un bucle. El usuario debe elegir:
 
 1. Mostrar pregunta: a) crear un metodo en la clase journal ShowPromt() 
 
-
-
     1.1 Esperar que escriba
     1.2 Guardar Pregunta en una lista
     1.3 Guardar Respuesta en una lista

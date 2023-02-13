@@ -39,7 +39,7 @@ class Program
             int randomNumber = randomObject.Next(0, 4); 
 
 
-            if (menu ==1)
+            if (menu == 1)
             {
 
                 
@@ -52,13 +52,13 @@ class Program
             }
 
 
-            else if(menu ==2)
+            else if(menu == 2)
             {   
                 journal.DisplayEntries();
             }
 
 
-            else if(menu ==3)
+            else if(menu == 3)
             
             {
                 
@@ -68,7 +68,7 @@ class Program
             }
 
             
-            else if(menu ==4)
+            else if(menu == 4)
             
             {
                 
