@@ -3,7 +3,7 @@ using System;
 public class Scripture
 {
     //ATTRIBUTES
-    private string _reference;
+
     public List<String> _words = new List<String>();
 
     
