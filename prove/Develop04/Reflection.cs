@@ -72,5 +72,7 @@ class Reflection : Activity
             randomIndex = randomObject.Next(0, _reflectionQuestions.Count());
             currentTime = DateTime.Now;
         }
+
+        Console.WriteLine();
     }
 }

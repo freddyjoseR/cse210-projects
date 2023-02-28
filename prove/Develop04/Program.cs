@@ -87,7 +87,34 @@ class Program
 
             if (userChoice == "3")
             {
+                // This will clear the console
+                Console.Clear();
+                Listing listing = new Listing();
 
+                listing.GetActivityName("Listing");
+                Console.WriteLine(listing.GetWelcomeMessage());
+
+                Console.WriteLine();
+                listing.GetActivityDescription("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+
+                Console.WriteLine();
+                Console.Write("How long, in seconds, would you like for your session? ");
+                string activityTime = Console.ReadLine();
+                int time = int.Parse(activityTime);
+                Console.WriteLine(time);
+                listing.GetActivityDuration(time);
+
+                // This will clear the console
+                Console.Clear();
+                
+                // This will display a brief waiting time to begin activity
+                listing.GetReadyMessage();
+
+                listing.GetPrompt();
+
+                listing.CreateList();
+
+                listing.GetCompletionMessage(time);
             }
         }
         
