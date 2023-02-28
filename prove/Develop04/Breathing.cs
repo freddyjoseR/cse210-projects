@@ -5,12 +5,12 @@ public class Breathing : Activity
     private string _breatheIn = "Breathe in";
     private string _breatheOut = "Now breathe out";
 
-    private int _activityDuration;
+    // private int _activityDuration;
 
-        public void GetActivityDuration(int time)
-    {
-        _activityDuration = time;
-    }
+    //     public void GetActivityDuration(int time)
+    // {
+    //     _activityDuration = time;
+    // }
     public void GetBreathingInstruction()
     {
         DateTime startTime = DateTime.Now;

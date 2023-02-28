@@ -5,10 +5,16 @@ public class Activity
 
     private string _activityName;
     private string _activityDescription;
+
+    protected int _activityDuration;
+
+        public void GetActivityDuration(int time)
+    {
+        _activityDuration = time;
+    }
     
     public string GetActivityName(string activityName)
     {
-        Console.WriteLine(activityName);
         return _activityName = activityName;
     }
 
@@ -32,21 +38,7 @@ public class Activity
     Console.WriteLine("Get ready...");
         while (currentTime < futureTime)
         {    
-            Console.Write("-");
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the last character
-            
-            Console.Write("\\"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
-            
-            Console.Write("|"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
-            
-            Console.Write("/"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
+            GetLoadingAnimation(1);
 
             currentTime = DateTime.Now; // Update time for making the loop to stop
         }
@@ -62,24 +54,7 @@ public class Activity
         Console.WriteLine("Well done!!");
         while (currentTime < futureTime)
         {    
-            Console.Write("-");
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the last character
-            
-            Console.Write("\\"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
-            
-            Console.Write("|"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
-            
-            Console.Write("/"); // Replace it with the new character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the past character
-            // Console.Clear();
-
-            // Console.WriteLine("Well done!!");
+            GetLoadingAnimation(1);
 
             currentTime = DateTime.Now; // Update time for making the loop to stop
         }
@@ -92,6 +67,24 @@ public class Activity
         Console.WriteLine($"You have completed another {activityDuration} seconds of the {_activityName} Activity.");
         while (currentTime2 < futureTime2)
         {    
+            GetLoadingAnimation(1);
+            currentTime2 = DateTime.Now; // Update time for making the loop to stop
+        }
+    }
+
+    protected void GetLoadingAnimation(int timesToRepeat)
+    {
+        List<int> times = new List<int>();
+        int count = 0;
+
+        while(count != timesToRepeat)
+        {
+            count += 1;
+            times.Add(count);
+        }
+
+        foreach(int time in times)
+        {
             Console.Write("-");
             Thread.Sleep(500);
             Console.Write("\b \b"); // Erase the last character
@@ -107,8 +100,6 @@ public class Activity
             Console.Write("/"); // Replace it with the new character
             Thread.Sleep(500);
             Console.Write("\b \b"); // Erase the past character
-
-            currentTime2 = DateTime.Now; // Update time for making the loop to stop
         }
     }
 }
