@@ -105,6 +105,6 @@ class Program
 
     public static void DisplayGoalInformation(Goal goal)
     {
-        string 
+        // string 
     }
 }
