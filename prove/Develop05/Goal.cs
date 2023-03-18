@@ -1,41 +1,26 @@
-public class Goal
+public abstract class Goal
 {
-    private string _name;
-    private string _description;
-    
+    protected string _name;
+    protected string _description;
+    protected string _checkBox;
 
-    public Goal(string name, string descripcion)
+
+    public Goal(string name, string description, string checkBox)
     {
         _name = name;
-        _description = descripcion;
+        _description = description;
+        _checkBox = checkBox;
     }
 
-    public void MakeList()
-    {
-
-    }
-
-    public string GetName()
+    public string GetGoalName()
     {
         return _name;
     }
 
-    
-    public string GetDescription()
+    public string GetGoalDescription()
     {
         return _description;
     }
-
-
-    public void SetGoalInfo(string name, string description)
-    {
-        _name = name;
-        _description = description;
-    }
-
-    public void DisplayGoal()
-    {
-        Console.WriteLine($" [ ] {_name} ({_description})");
-    }
-
+    
+    public abstract void GetGoalInformation(int index);
 }

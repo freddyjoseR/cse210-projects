@@ -1,19 +1,20 @@
 using System;
+using System.IO; 
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<Goal> _goalList = new List<Goal>(); 
+        List<Goal> goalList = new List<Goal>(); 
 
         string userChoice = "";
-        int points = 0;
+        int startingPoints = 0;
 
         while(userChoice != "6")
         {
             Console.WriteLine();
 
-            Console.WriteLine($"You have {points} points.");
+            Console.WriteLine($"You have {startingPoints} points.");
 
             Console.WriteLine();
 
@@ -43,45 +44,74 @@ class Program
                 if(goalType == "1")
                 {
                     Console.Write("What is the name of your goal? ");
-                    string name = Console.ReadLine();
+                    string goalName = Console.ReadLine();
 
-                    Console.Write("What is a short desciption of it? ");
-                    string description = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string goalDescription = Console.ReadLine();
 
                     Console.Write("What is the amount of points associated with this goal? ");
                     string goalScore = Console.ReadLine();
-                    int point = int.Parse(goalScore);
+                    int points = int.Parse(goalScore);
 
-                    Simple sGoal = new Simple(name, description, point);
-                    _goalList.Add(sGoal);
-                    Thread.Sleep(2000);
+                    Simple simpleGoal = new Simple(goalName, goalDescription, points, "[ ]");
+
+                    goalList.Add(simpleGoal);
                 }
 
-                if(goalType == "2")
+                else if(goalType == "2")
                 {
                     Console.Write("What is the name of your goal? ");
-                    string name = Console.ReadLine();
+                    string goalName = Console.ReadLine();
 
-                    Console.Write("What is a short desciption of it? ");
-                    string description = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string goalDescription = Console.ReadLine();
 
-                    Eternal eGoal = new Eternal(name, description);
-                    _goalList.Add(eGoal);
+                    Console.Write("What is the amount of points associated with this goal? ");
+                    string goalScore = Console.ReadLine();
+                    int points = int.Parse(goalScore);
+
+                    Eternal eternalGoal = new Eternal(goalName, goalDescription, points, "[ ]");
+
+                    goalList.Add(eternalGoal);
                 }
 
-                if(goalType == "3")
+                else if(goalType == "3")
                 {
-                    
+                    Console.Write("What is the name of your goal? ");
+                    string goalName = Console.ReadLine();
+
+                    Console.Write("What is a short description of it? ");
+                    string goalDescription = Console.ReadLine();
+
+                    Console.Write("What is the amount of points associated with this goal? ");
+                    string goalScore = Console.ReadLine();
+                    int points = int.Parse(goalScore);
+
+                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                    string timesToAccomplished = Console.ReadLine();
+                    int times = int.Parse(timesToAccomplished);
+
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    string bonusScore = Console.ReadLine();
+                    int bonus = int.Parse(timesToAccomplished);
+
+                    Checklist checklistGoal = new Checklist(goalName, goalDescription, points, times, bonus, "[ ]");
+
+                    goalList.Add(checklistGoal);
                 }
 
             }
-            else if(userChoice == "2")
+
+            if(userChoice == "2")
             {
                 int index = 0;
-                foreach(Goal goal in _goalList)
+
+                Console.WriteLine("The Goals are:");
+
+                foreach (Goal goal in goalList)
                 {
                     index += 1;
-                    Console.WriteLine($"{index}. [ ] {goal}");
+                    goal.GetGoalInformation(index);
                 }
             }   
 
@@ -103,8 +133,4 @@ class Program
         }
     }
 
-    public static void DisplayGoalInformation(Goal goal)
-    {
-        // string 
-    }
 }
