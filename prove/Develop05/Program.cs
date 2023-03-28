@@ -95,7 +95,7 @@ class Program
                     string bonusScore = Console.ReadLine();
                     int bonus = int.Parse(timesToAccomplished);
 
-                    Checklist checklistGoal = new Checklist(goalName, goalDescription, points, times, bonus, "[ ]");
+                    Checklist checklistGoal = new Checklist(goalName, goalDescription, points, times, bonus, "[ ]", 0);
 
                     goalList.Add(checklistGoal);
                 }

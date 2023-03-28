@@ -21,6 +21,8 @@ public abstract class Goal
     {
         return _description;
     }
+
+    
     
     public abstract void GetGoalInformation(int index);
 }

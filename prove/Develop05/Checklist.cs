@@ -4,15 +4,16 @@ public class Checklist : Goal
 { 
     private int _points;
     private int _times;
-    private int _bonusPoints = 0;
+    private int _bonusPoints;
 
     private int _completedTimes;
 
-    public Checklist(string name, string description,int points, int timesToBonus, int bonusPoints, string checkBox) : base (name, description, checkBox)
+    public Checklist(string name, string description,int points, int timesToBonus, int bonusPoints, string checkBox, int completedTimes) : base (name, description, checkBox)
     {
         _points = points;
         _times = timesToBonus;
         _bonusPoints = bonusPoints;
+        _completedTimes = completedTimes;
     }
 
     public int GetPoints()
