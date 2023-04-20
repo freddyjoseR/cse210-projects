@@ -10,4 +10,8 @@ class Address
         _street = street;
     }
 
+    public void GetAddress()
+    {
+        Console.WriteLine($"{_street}, {_city}, {_state}, {_country}");
+    }
 }

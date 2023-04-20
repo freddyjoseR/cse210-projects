@@ -20,7 +20,7 @@ class Order
         
     }
 
-    public void GetPackingLabel()
+    public void GetPackingLabel(string name, int idNumber)
     {
         
     }
